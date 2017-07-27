@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clock</title>
+</head>
+<body>
+    <script>
+        var hour,
+            minute;
+        
+        function enterCorrNum() {
+            hour = +prompt ('Pleas enter a number from 0 to 12', 'What time is it?');
+            for (;;){
+                if (hour > 12 || hour < 0) {
+                    hour = +prompt ('Please enter correct number', '0 - 12');
+                } else {
+                    break;
+                };
+            };
+            
+            minute = +prompt ('Pleas enter a number from 0 to 59', 'What time is it?');
+            for (;;) {
+                if (minute > 59 || minute < 0) {
+                    minute = +prompt ('Please enter correct number', '0 - 59');
+                } else {
+                    break;
+                };
+            };
+        }
+        
+        function calcAngle(hour, minute) {
+            var hangle = 30 * hour + minute * 0.5;
+            var mangle = 6 * minute;
+            var result;
+            
+            if (mangle > hangle) {
+                result = mangle - hangle;
+            } else {
+                result = hangle - mangle;
+            };
+            
+            if (result <= 180) {
+                return result;
+            } else {
+                return 360 - result;
+            };
+        };
+        
+        function showAngle() {
+            enterCorrNum();
+            
+            alert (calcAngle(hour, minute));
+        };
+        
+        showAngle();
+        
+    </script>
+</body>
+</html>

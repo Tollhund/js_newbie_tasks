@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>math+</title>
+</head>
+<body>
+    <script>
+        /*
+        var num_one;
+        var num_two;
+        var summ;
+        num_one = +prompt ("Enter number", "");
+        num_two = +prompt ("Enter number", "");
+        summ = num_one + num_two;
+        if (isNaN(summ)) {
+            alert ("Mistake");
+        } else {
+            alert (summ.toFixed(2)+'$');
+        } */
+        
+        var num = +prompt ('','0.123');;
+        
+        function getDecimal(number) {
+            number = number - Math.floor(number);
+            var a = calcSym(number);
+            for (i = 1; i <= a; i++){
+                number *= 10;
+                console.log(number);
+            }
+            return number;
+        }
+        
+        function calcSym(number){
+            var count = 0;
+        
+            do{
+                number *= 10;
+                count++;
+            } while(number != Math.floor(number));
+            console.log(count);
+            return count;
+        }
+        
+        alert (getDecimal(num));
+    </script>
+    
+</body>
+</html>
