@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Strings</title>
+</head>
+<body>
+    <script>
+        function upFirstChar(str) {
+            var sym = str.charAt(0);
+            sym = sym.toUpperCase();
+            str = str.substr(1);
+            alert (sym + str);
+        }
+        
+        function checkSpam(str) {
+            var viagra = 'viagra';
+            var xxx = 'xxx';
+            str = str.toLowerCase();
+            if (str.indexOf(viagra, 0) != -1 || str.indexOf(xxx, 0) != -1) {
+                return true;
+            }else {
+                return false;
+            }
+        }
+        /*урезание строки*/
+        function truncate(str, maxlength) {
+            if (str.length > maxlength) {
+                str = str.slice(0,maxlength - 3) + '...';
+                return str;
+            }
+        }
+        
+        function extrCurrValue(str) {
+            str = +str.slice(1);
+            return str;
+        }
+        alert(extrCurrValue('$8765786567576'));
+    </script>
+    
+</body>
+</html>

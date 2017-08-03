@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+</head>
+<body>   
+    <script>
+//        var goods = ['a','b','c'];
+//        alert (goods[goods.length - 1]);
+//        
+//        goods.push('Computer');
+//        alert(goods);
+//        
+//        var styles = ['Jazz', 'Blues'];
+//        styles.push('Rock\'n\'Roll');
+//        styles[styles.length - 2] = 'Classics';
+//        alert (styles.shift());
+//        styles.unshift('Rap', 'Reggage');
+//        alert(styles);
+        
+        var arr = ['asd', 22, '12asd', true];
+        var min = 0;
+        var max = arr.length - 1;
+        
+        var rand = min + Math.floor(Math.random() * (max + 1 - min));
+                
+        console.log(arr[rand]);
+    </script>
+</body>
+</html>
