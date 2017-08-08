@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array_sort</title>
+</head>
+<body>
+    <script>
+        /*
+        var arr = [1,9,3,2,5];
+        for (i=0; i<arr.length; i++) {
+            for (j = i+1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    arr[i] = arr[i]+arr[j];
+                    arr[j] = arr[i]-arr[j];
+                    arr[i] = arr[i]-arr[j];
+                }
+            }
+        }
+            console.log (arr);
+            
+        var arr = [9,3,4,2,5];
+        var min = arr[0];
+        for (i=1; i<arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        
+        var arr = ['one', 'two', 'four'];
+        function addElemArr(elem) {
+            var checkSame = true;
+            for (i=0; i<arr.length; i++) {
+                if (elem == arr[i]) {
+                    checkSame = false;
+                    break;
+                }
+            }
+            if (checkSame == true) {
+                arr.push(elem);
+            } else {
+                alert("Error");
+            }
+        }
+        addElemArr('');
+        console.log (arr);
+        
+        function camelize(string) {
+            var first;
+            var a = string.split('-');
+            for (i=1; i < a.length; i++) {
+                first = a[i].charAt(0).toUpperCase();
+                a[i] = first + a[i].substr(1,);
+            }
+            string = a.join('');
+            console.log(string);
+        }
+        camelize("border-left-width");
+        
+        var arr = [3, 5, 8, 1, 0, 4, 9];
+        
+        function filterRangeInPlace(arr, a, b) {
+            for (i = 0; i < arr.length; i++) {
+                if (arr[i] < a || arr[i] > b ){
+                    arr.splice(i, 1);
+                    i--;
+                }
+            }
+            console.log(arr);
+        }
+        filterRangeInPlace(arr, 2, 6);
+        
+        
+        var arr = [5, 2, 1, -10, 8];
+        for (i=0; i < arr.length; i++) {
+            for (j = i+1; j < arr.length; j++) {
+                if (arr[i] < arr[j]) {
+                    arr[i] = arr[i]+arr[j];
+                    arr[j] = arr[i]-arr[j];
+                    arr[i] = arr[i]-arr[j];
+                }
+            }
+        }
+        console.log(arr);
+        
+        var arr = ["HTML", "JavaScript", "CSS"];
+        var arrSorted = arr.slice();
+        for (i=0; i < arrSorted.length; i++) {
+            for (j=i+1; j < arrSorted.length; j++) {
+                if (arrSorted[i].toUpperCase() > arrSorted[j].toUpperCase()) {
+                    var k = arrSorted[j];
+                    arrSorted[j] = arrSorted[i];
+                    arrSorted[i] = k;
+                } 
+            }
+        }
+        console.log(arr);
+        console.log(arrSorted);
+        
+        var arr = [1, 2, 3, 4, 5];
+        function sortRandom(a,b) {
+            return Math.floor(Math.random() * 3) - 1;
+        }
+        
+        arr.sort(sortRandom);
+        console.log (arr); */
+        
+        var arr = ["воз", "киборг", "корсет", "ЗОВ", "гробик", "костер", "сектор"];
+        function anagClean(arr) {
+            var reserved;
+            for (i=0; i<arr.length; i++) {
+                for (j=i+1; j<arr.length; j++) {
+                    if (arr[i].length == arr[j].length) {
+                        reserved = arr[i];
+                        for (k=0; k<arr[i].length; k++){
+                            for (l=0; l<arr[j].length; l++) {
+                                if (arr[i].charAt(k) == arr[j].charAt(l)) {
+                                    arr[j].replace(arr[j].charAt(l,''));
+                                    arr[i].replace(arr[i].charAt(k,''));
+                                    console.log(reserved);
+                                    }
+                            }
+                        }
+                        //console.log(arr[i]+' '+arr[j]);
+                    }
+                }
+            }
+        }
+        anagClean(arr);
+    </script>
+    
+</body>
+</html>
