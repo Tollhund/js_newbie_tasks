@@ -105,28 +105,46 @@
         arr.sort(sortRandom);
         console.log (arr); */
         
-        var arr = ["воз", "киборг", "корсет", "ЗОВ", "гробик", "костер", "сектор"];
+        /*var arr = ["воз", "киборг", "корсет", "ЗОВ", "гробик", "костер", "сектор"];
         function anagClean(arr) {
-            var reserved;
+            var validate = false;
             for (i=0; i<arr.length; i++) {
                 for (j=i+1; j<arr.length; j++) {
                     if (arr[i].length == arr[j].length) {
-                        reserved = arr[i];
-                        for (k=0; k<arr[i].length; k++){
-                            for (l=0; l<arr[j].length; l++) {
-                                if (arr[i].charAt(k) == arr[j].charAt(l)) {
-                                    arr[j].replace(arr[j].charAt(l,''));
-                                    arr[i].replace(arr[i].charAt(k,''));
-                                    console.log(reserved);
-                                    }
-                            }
+                        var a = arr[i].toLowerCase;
+                        var b = arr[j].toLowerCase;
+                        var validate = false;
+                        for (k=0; k<a.length; k++){
+                            for (l=0; l<b.length; l++)
+                                if (a.charAt(k) == b.charAt(l)) {
+                                    validate = true;
+                                }// else {
+                                   // break;
+                                //}
                         }
+                        console.log(validate);
                         //console.log(arr[i]+' '+arr[j]);
                     }
                 }
             }
         }
-        anagClean(arr);
+        anagClean(arr);*/
+        
+        var strings = ["кришна", "кришна", "харе", "харе",
+        "харе", "харе", "кришна", "кришна", "8-()"];
+        
+        function unic(arr) {
+            for (i=0; i<arr.length; i++) {
+                for (j=i+1; j<arr.length; j++) {
+                    if (arr[i] == arr[j]) {
+                        arr.splice(j,1);
+                        j--;
+                    }
+                }
+            }
+        console.log(arr);
+        }
+        unic(strings);
     </script>
     
 </body>
